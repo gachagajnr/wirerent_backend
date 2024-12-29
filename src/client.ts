@@ -4,6 +4,20 @@ import type { TransportConnection, Application } from '@feathersjs/feathers'
 import authenticationClient from '@feathersjs/authentication-client'
 import type { AuthenticationClientOptions } from '@feathersjs/authentication-client'
 
+import { unitsClient } from './services/units/units.shared'
+export type { Units, UnitsData, UnitsQuery, UnitsPatch } from './services/units/units.shared'
+
+import { blocksClient } from './services/blocks/blocks.shared'
+export type { Blocks, BlocksData, BlocksQuery, BlocksPatch } from './services/blocks/blocks.shared'
+
+import { agenciesClient } from './services/agencies/agencies.shared'
+export type {
+  Agencies,
+  AgenciesData,
+  AgenciesQuery,
+  AgenciesPatch
+} from './services/agencies/agencies.shared'
+
 import { userClient } from './services/users/users.shared'
 export type { User, UserData, UserQuery, UserPatch } from './services/users/users.shared'
 
@@ -34,5 +48,9 @@ export const createClient = <Configuration = any,>(
   client.set('connection', connection)
 
   client.configure(userClient)
+  client.configure(agenciesClient)
+
+  client.configure(blocksClient)
+  client.configure(unitsClient)
   return client
 }
