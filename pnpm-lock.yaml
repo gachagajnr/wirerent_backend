@@ -47,6 +47,12 @@ importers:
       '@feathersjs/typebox':
         specifier: 5.0.31
         version: 5.0.31(typescript@5.6.3)
+      feathers-authentication-management:
+        specifier: ^5.1.0
+        version: 5.1.0(@feathersjs/feathers@5.0.31)(typescript@5.6.3)
+      feathers-mailer:
+        specifier: ^4.1.1
+        version: 4.1.1
       mongodb:
         specifier: 6.10.0
         version: 6.10.0
@@ -531,6 +537,9 @@ packages:
       ajv:
         optional: true
 
+  ajv@6.12.6:
+    resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
+
   ajv@8.17.1:
     resolution: {integrity: sha512-B/gBuNg5SiMTrPkC+A2+cW0RszwxYmn6VYxB/inlBStS5nx6xHIt/ehKRhIMhqusl7a8LjQoZnjCs5vhwxOQ1g==}
 
@@ -951,8 +960,27 @@ packages:
   fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
 
+  fast-json-stable-stringify@2.1.0:
+    resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
+
   fast-uri@3.0.3:
     resolution: {integrity: sha512-aLrHthzCjH5He4Z2H9YZ+v6Ujb9ocRuW6ZzkJQOrTxleEijANq4v1TsaPaVG1PZcuurEzrLcWRyYBYXD5cEiaw==}
+
+  feathers-authentication-management@5.1.0:
+    resolution: {integrity: sha512-ts1oPcnf1m/Jm5PH+AFWEc4vnq4zsmuuYMaGOHOmG4AdKAd+eX6hkogoCYxZO6/+LSj0MGK2b1iPEXt2TvO9gQ==}
+    engines: {node: '>= 14'}
+    peerDependencies:
+      '@feathersjs/feathers': ^5.0.0
+
+  feathers-hooks-common@8.2.1:
+    resolution: {integrity: sha512-t3gLAaTY5ufnAoKczLCNXJddq/L9ORrvxAlfuU2Azgoi0b6X3t0Y91l1JCJAvixzxxwLJmgdnKpFX32+CvEn0A==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      '@feathersjs/feathers': ^5.0.0
+
+  feathers-mailer@4.1.1:
+    resolution: {integrity: sha512-euc/DhWio5xz4oZhwMhBfmRWGIdpw8GRio00EzYPRxOhDGcj3VfpyOOhSVwXDWHHe8tlMOZctMh/ouVh6yGJEg==}
+    engines: {node: '>= 16'}
 
   fecha@4.2.3:
     resolution: {integrity: sha512-OP2IUU6HeYKJi3i0z4A19kHMQoLVs4Hc+DPqqxI2h/DPZHTm/vjsfC6P0b4jCMy14XizLBqvndQ+UilD7707Jw==}
@@ -1042,6 +1070,10 @@ packages:
   grant@5.4.23:
     resolution: {integrity: sha512-lEMfgem990lWTU+j9jbOKmIsvvetVlwGzsWjoCgKz9zKcP7edI6mjyUA5QUSn7aeBYONTE3WnfhBhvONQGP1Hg==}
     engines: {node: '>=12.0.0'}
+
+  graphql@16.10.0:
+    resolution: {integrity: sha512-AjqGKbDGUFRKIRCP9tCKiIGHyriz2oHEbPIbEtcSLSs4YjReZOIPQQWek4+6hjw62H9QShXHyaGivGiYVLeYFQ==}
+    engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
 
   has-flag@3.0.0:
     resolution: {integrity: sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==}
@@ -1195,6 +1227,9 @@ packages:
   json-schema-to-ts@3.1.1:
     resolution: {integrity: sha512-+DWg8jCJG2TEnpy7kOm/7/AxaYoaRbjVB4LFZLySZlWn8exGs3A4OLJR966cVvU26N7X9TWxl+Jsw7dzAqKT6g==}
     engines: {node: '>=16'}
+
+  json-schema-traverse@0.4.1:
+    resolution: {integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==}
 
   json-schema-traverse@1.0.0:
     resolution: {integrity: sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug==}
@@ -1405,6 +1440,14 @@ packages:
   negotiator@0.6.4:
     resolution: {integrity: sha512-myRT3DiWPHqho5PrJaIRyaMv2kgYf0mUVgBNOYMuCH5Ki1yEiQaf/ZJuQ62nvpc44wL5WDbTX7yGJi1Neevw8w==}
     engines: {node: '>= 0.6'}
+
+  neotraverse@0.6.18:
+    resolution: {integrity: sha512-Z4SmBUweYa09+o6pG+eASabEpP6QkQ70yHj351pQoEXIs8uHbaU2DWVmzBANKgflPa47A50PtB2+NgRpQvr7vA==}
+    engines: {node: '>= 10'}
+
+  nodemailer@6.9.16:
+    resolution: {integrity: sha512-psAuZdTIRN08HKVd/E8ObdV6NO7NTBY3KsC30F7M4H1OnmLCUNaS56FpYxyb26zWLSyYF9Ozch9KYHhHegsiOQ==}
+    engines: {node: '>=6.0.0'}
 
   nodemon@3.1.9:
     resolution: {integrity: sha512-hdr1oIb2p6ZSxu3PB2JWWYS7ZQ0qvaZsc3hK8DR8f02kRzc8rjYmxAIvdz+aYC+8F2IjNaB7HMcSDg8nQpJxyg==}
@@ -1773,6 +1816,10 @@ packages:
     resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
     engines: {node: '>=10'}
 
+  type-fest@4.31.0:
+    resolution: {integrity: sha512-yCxltHW07Nkhv/1F6wWBr8kz+5BGMfP+RbRSYFnegVb0qV/UMT0G0ElBloPVerqn4M2ZV80Ir1FtCcYv1cT6vQ==}
+    engines: {node: '>=16'}
+
   type-is@1.6.18:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
     engines: {node: '>= 0.6'}
@@ -1791,6 +1838,9 @@ packages:
   unpipe@1.0.0:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
     engines: {node: '>= 0.8'}
+
+  uri-js@4.4.1:
+    resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
@@ -2400,6 +2450,13 @@ snapshots:
     optionalDependencies:
       ajv: 8.17.1
 
+  ajv@6.12.6:
+    dependencies:
+      fast-deep-equal: 3.1.3
+      fast-json-stable-stringify: 2.1.0
+      json-schema-traverse: 0.4.1
+      uri-js: 4.4.1
+
   ajv@8.17.1:
     dependencies:
       fast-deep-equal: 3.1.3
@@ -2885,7 +2942,44 @@ snapshots:
 
   fast-deep-equal@3.1.3: {}
 
+  fast-json-stable-stringify@2.1.0: {}
+
   fast-uri@3.0.3: {}
+
+  feathers-authentication-management@5.1.0(@feathersjs/feathers@5.0.31)(typescript@5.6.3):
+    dependencies:
+      '@feathersjs/authentication': 5.0.31(typescript@5.6.3)
+      '@feathersjs/authentication-client': 5.0.31(typescript@5.6.3)
+      '@feathersjs/authentication-local': 5.0.31(typescript@5.6.3)
+      '@feathersjs/errors': 5.0.31
+      '@feathersjs/feathers': 5.0.31
+      bcryptjs: 2.4.3
+      debug: 4.4.0
+      feathers-hooks-common: 8.2.1(@feathersjs/feathers@5.0.31)
+      lodash: 4.17.21
+      type-fest: 4.31.0
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+
+  feathers-hooks-common@8.2.1(@feathersjs/feathers@5.0.31):
+    dependencies:
+      '@feathersjs/errors': 5.0.31
+      '@feathersjs/feathers': 5.0.31
+      ajv: 6.12.6
+      debug: 4.4.0
+      graphql: 16.10.0
+      lodash: 4.17.21
+      neotraverse: 0.6.18
+    transitivePeerDependencies:
+      - supports-color
+
+  feathers-mailer@4.1.1:
+    dependencies:
+      debug: 4.4.0
+      nodemailer: 6.9.16
+    transitivePeerDependencies:
+      - supports-color
 
   fecha@4.2.3: {}
 
@@ -2992,6 +3086,8 @@ snapshots:
       cookie-signature: 1.2.2
       jwk-to-pem: 2.0.7
       jws: 4.0.0
+
+  graphql@16.10.0: {}
 
   has-flag@3.0.0: {}
 
@@ -3142,6 +3238,8 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.26.0
       ts-algebra: 2.0.0
+
+  json-schema-traverse@0.4.1: {}
 
   json-schema-traverse@1.0.0: {}
 
@@ -3387,6 +3485,10 @@ snapshots:
   negotiator@0.6.3: {}
 
   negotiator@0.6.4: {}
+
+  neotraverse@0.6.18: {}
+
+  nodemailer@6.9.16: {}
 
   nodemon@3.1.9:
     dependencies:
@@ -3772,6 +3874,8 @@ snapshots:
 
   type-fest@0.21.3: {}
 
+  type-fest@4.31.0: {}
+
   type-is@1.6.18:
     dependencies:
       media-typer: 0.3.0
@@ -3784,6 +3888,10 @@ snapshots:
   undici-types@6.19.8: {}
 
   unpipe@1.0.0: {}
+
+  uri-js@4.4.1:
+    dependencies:
+      punycode: 2.3.1
 
   util-deprecate@1.0.2: {}
 

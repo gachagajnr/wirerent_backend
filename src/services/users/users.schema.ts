@@ -17,8 +17,35 @@ export const userSchema = Type.Object(
     password: Type.Optional(Type.String()),
     googleId: Type.Optional(Type.String()),
     facebookId: Type.Optional(Type.String()),
-    twitterId: Type.Optional(Type.String())
-  },
+    twitterId: Type.Optional(Type.String()),
+    name: Type.String(),
+    // surname:  Type.String(),
+    phone: Type.String(),
+    orgName:  Type.String(),
+    // profilePicture: Type.String(),
+    role: Type.String(),
+    resetPassword:  Type.Boolean(),
+    isRoot: Type.Boolean(),
+    isVerified: Type.Boolean(),
+    // agency: Type.Union([Type.Null(), Type.String({ format: 'object-id' })]), // Reference to "agents"
+    // building: Type.Union([Type.Null(), Type.String({ format: 'object-id' })]), // Reference to "buildings"
+
+
+    // verifyToken: Type.String(),
+    // verifyExpires: Type.Date(),
+    // verifyChanges: Type.Object(Type.Any()),
+    // resetToken: Type.String(),
+    //   verifyShortToken: Type.String(),
+      // resetShortToken: { type: String }, // Stores the rest token
+
+    // resetExpires: Type.Date(),
+    // isAdminVerified:Type.Boolean(),
+    // organization: Type.Union([Type.Null(), Type.String({ format: 'object-id' })]), // Reference to "agents"
+
+    // rooms: Type.Array(
+      // Type.Union([Type.Null(), Type.String({ format: 'object-id' })]) // Reference to "agents"
+    // ),
+  }, 
   { $id: 'User', additionalProperties: false }
 )
 export type User = Static<typeof userSchema>
